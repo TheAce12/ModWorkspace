@@ -1,6 +1,7 @@
 package com.theace.spongebob;
 
 import com.mojang.logging.LogUtils;
+import com.theace.spongebob.block.ModBlocks;
 import com.theace.spongebob.item.ModCreativeModeTabs;
 import com.theace.spongebob.item.ModItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -25,6 +26,7 @@ public class SpongebobMod
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItem.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -41,6 +43,12 @@ public class SpongebobMod
         }
         if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB){
             event.accept(ModItem.SPONGE);
+        }
+        if(event.getTab() == CreativeModeTabs.BUILDING_BLOCKS){
+            event.accept(ModBlocks.AMOGUS_BLOCK);
+        }
+        if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB){
+            event.accept(ModBlocks.AMOGUS_BLOCK);
         }
     }
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
