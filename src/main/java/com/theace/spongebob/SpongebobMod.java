@@ -2,9 +2,11 @@ package com.theace.spongebob;
 
 import com.mojang.logging.LogUtils;
 import com.theace.spongebob.block.ModBlocks;
+import com.theace.spongebob.entity.ModEntity;
+import com.theace.spongebob.entity.client.SpongeRenderer;
 import com.theace.spongebob.item.ModCreativeModeTabs;
 import com.theace.spongebob.item.ModItem;
-import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -27,6 +29,7 @@ public class SpongebobMod
 
         ModItem.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModEntity.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -53,13 +56,19 @@ public class SpongebobMod
         if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB){
             event.accept(ModItem.CREWMATE);
         }
+        if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB){
+            event.accept(ModItem.SPAWN_EGG_SPONGE);
+        }
+        if(event.getTab() == CreativeModeTabs.SPAWN_EGGS){
+            event.accept(ModItem.SPAWN_EGG_SPONGE);
+        }
 
     }
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            EntityRenderers.register(ModEntity.SPONGEBOB.get(), SpongeRenderer::new);
         }
     }
 }

@@ -1,12 +1,14 @@
 package com.theace.spongebob.item;
 
 import com.theace.spongebob.SpongebobMod;
+import com.theace.spongebob.entity.ModEntity;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -18,6 +20,9 @@ public class ModItem {
 
     public static  final RegistryObject<Item> SPONGE = ITEMS.register("sponge",
             () -> new Item(new Item.Properties()));
+
+    public static  final RegistryObject<Item> SPAWN_EGG_SPONGE = ITEMS.register("sponge_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntity.SPONGEBOB, 0xD57E36, 0X1D0D00,new Item.Properties()));
 
     public static final RegistryObject<Item> CREWMATE = ITEMS.register("crewmate",
             ()-> new Item(new Item.Properties().food(Foods.CREWMATE)));

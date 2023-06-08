@@ -9,47 +9,6 @@
           "name": "spongebob:amogus_block"
         }
       ]
-    },
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "spongebob:crewmate",
-          "functions": [
-            {
-              "function": "minecraft:set_enchantments",
-              "enchantments": {
-                "minecraft:fortune": 3
-              },
-              "add": true,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.7
-                }
-              ]
-            },
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 3,
-              "treasure": true,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 1
-                }
-              ]
-            }
-          ],
-          "conditions": [
-            {
-              "condition": "minecraft:random_chance",
-              "chance": 0.3
-            }
-          ]
-        }
-      ]
     }
   ]
 }

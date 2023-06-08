@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.Spongebob",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-8, 0, -3], "size": [6, 16, 5], "uv": [22, 24]},
+						{"origin": [2, 0, -3], "size": [6, 16, 5], "uv": [0, 24]},
+						{"origin": [-8, 16, -3], "size": [16, 19, 5], "uv": [0, 0]},
+						{"origin": [8, 9, -3], "size": [3, 12, 5], "uv": [39, 40]},
+						{"origin": [-11, 9, -3], "size": [3, 12, 5], "uv": [39, 40]},
+						{"origin": [-2, 14, -3], "size": [4, 2, 5], "uv": [39, 19]},
+						{"origin": [-1, 26, -8], "size": [2, 2, 5], "uv": [6, 9]}
+					]
+				}
+			]
+		}
+	]
+}

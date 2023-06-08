@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "spongebob:sponge"
+    }
+  },
+  "result": {
+    "item": "spongebob:amogus_block",
+    "count": 1
+  }
+}
