@@ -10,7 +10,7 @@ import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -27,6 +27,8 @@ public class SpongebobMod
     public SpongebobMod(){
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModeTabs.register(modEventBus);
+
         ModItem.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModEntity.register(modEventBus);
@@ -40,27 +42,31 @@ public class SpongebobMod
     private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
-    private void addCreative(CreativeModeTabEvent.BuildContents event) {
-        if(event.getTab() == CreativeModeTabs.INGREDIENTS){
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItem.SPONGE);
         }
-        if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB){
+        if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB.get()){
             event.accept(ModItem.SPONGE);
         }
-        if(event.getTab() == CreativeModeTabs.BUILDING_BLOCKS){
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
             event.accept(ModBlocks.AMOGUS_BLOCK);
         }
-        if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB){
+        if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB.get()){
             event.accept(ModBlocks.AMOGUS_BLOCK);
         }
-        if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB){
+        if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB.get()){
             event.accept(ModItem.CREWMATE);
         }
-        if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB){
+        if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB.get()){
             event.accept(ModItem.SPAWN_EGG_SPONGE);
         }
-        if(event.getTab() == CreativeModeTabs.SPAWN_EGGS){
+        if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS){
             event.accept(ModItem.SPAWN_EGG_SPONGE);
+        }if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
+            event.accept(ModItem.REDBULL);
+        }if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB.get()){
+            event.accept(ModItem.REDBULL);
         }
 
     }

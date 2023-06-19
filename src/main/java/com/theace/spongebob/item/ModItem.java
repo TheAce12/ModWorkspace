@@ -26,6 +26,8 @@ public class ModItem {
 
     public static final RegistryObject<Item> CREWMATE = ITEMS.register("crewmate",
             ()-> new Item(new Item.Properties().food(Foods.CREWMATE)));
+    public static final RegistryObject<Item> REDBULL = ITEMS.register("redbull",
+            ()-> new Item(new Item.Properties().food(Foods.REDBULL)));
 
     public static class Foods{
         public  static  final FoodProperties CREWMATE = new FoodProperties.Builder()
@@ -35,6 +37,13 @@ public class ModItem {
                 .effect( () -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600,5), 1f)
                 .effect( () -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600,5), 1f)
                 .effect( () -> new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 200,2), .5f)
+                .build();
+
+        public static final FoodProperties REDBULL = new FoodProperties.Builder()
+                .nutrition(20)
+                .saturationMod(.8f)
+                .effect( () -> new MobEffectInstance(MobEffects.LEVITATION, 2400,1),1)
+                .effect( () -> new MobEffectInstance(MobEffects.ABSORPTION, 2400, 100),1)
                 .build();
     }
     public static void register(IEventBus eventBus) {
