@@ -2,6 +2,7 @@ package com.theace.spongebob.block;
 
 import com.theace.spongebob.SpongebobMod;
 import com.theace.spongebob.item.ModItem;
+import com.theace.spongebob.item.custom.CustomBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -20,6 +21,8 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> AMOGUS_BLOCK = registerBlock("amogus_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(3f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> CUSTOM_BLOCK = registerBlock("custom_block",
+            () -> new CustomBlock(BlockBehaviour.Properties.copy(Blocks.HONEY_BLOCK).strength(3f).requiresCorrectToolForDrops()));
 
     private  static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name ,block);

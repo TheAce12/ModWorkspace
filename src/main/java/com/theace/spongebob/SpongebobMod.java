@@ -67,8 +67,15 @@ public class SpongebobMod
             event.accept(ModItem.REDBULL);
         }if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB.get()){
             event.accept(ModItem.REDBULL);
+        }if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB.get()){
+            event.accept(ModItem.DYING);
+        }if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB.get()) {
+            event.accept(ModItem.INVINCIBLE);
+        }if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB.get()) {
+            event.accept(ModBlocks.CUSTOM_BLOCK);
+        }if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB.get()) {
+            event.accept(ModItem.TELEPORTATION);
         }
-
     }
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {

@@ -2,24 +2,40 @@ package com.theace.spongebob.item;
 
 import com.theace.spongebob.SpongebobMod;
 import com.theace.spongebob.entity.ModEntity;
+import com.theace.spongebob.item.custom.Bomboclat;
+import com.theace.spongebob.item.custom.Teleportation;
+import com.theace.spongebob.item.custom.Yup;
+import net.minecraft.advancements.critereon.LightningStrikeTrigger;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.player.Abilities;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.checkerframework.checker.units.qual.A;
 
 public class ModItem {
+
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, SpongebobMod.MOD_ID);
 
     public static  final RegistryObject<Item> SPONGE = ITEMS.register("sponge",
             () -> new Item(new Item.Properties()));
+
+    public static  final RegistryObject<Item> DYING = ITEMS.register("dying",
+            () -> new Yup(new Item.Properties()));
+    public static  final RegistryObject<Item> INVINCIBLE = ITEMS.register("invincible",
+            () -> new Bomboclat(new Item.Properties()));
+
+    public static  final RegistryObject<Item> TELEPORTATION = ITEMS.register("tp_wand",
+            () -> new Teleportation(new Item.Properties().durability(50)));
 
     public static  final RegistryObject<Item> SPAWN_EGG_SPONGE = ITEMS.register("sponge_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntity.SPONGEBOB, 0xD57E36, 0X1D0D00,new Item.Properties()));

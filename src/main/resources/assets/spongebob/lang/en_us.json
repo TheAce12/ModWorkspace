@@ -5,5 +5,9 @@
   "block.spongebob.amogus_block": "Sussy block",
   "item.spongebob.crewmate": "Crewmate?",
   "item.spongebob.sponge_spawn_egg": "Spongebob Spawn Egg",
-  "item.spongebob.redbull": "Bombaclaut"
+  "item.spongebob.redbull": "Bombaclaut",
+  "item.spongebob.dying": "dying",
+  "item.spongebob.invincible": "invincible",
+  "block.spongebob.custom_block": "Custom Block",
+  "item.spongebob.tp_wand": "Teleportation Wand"
 }
