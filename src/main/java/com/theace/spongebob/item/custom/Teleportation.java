@@ -10,14 +10,17 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 
 public class Teleportation extends Item {
     public Teleportation(Properties p_41383_) {
         super(p_41383_);
     }
     public BlockPos blockPos;
+    public Block blockType;
     public Player player;
     boolean clicked = false;
     @Override
@@ -29,16 +32,10 @@ public class Teleportation extends Item {
             player = pContext.getPlayer();
             blockPos = pContext.getClickedPos();
             clicked = true;
-            player.sendSystemMessage(Component.literal(blockPos.getX() + ", "  + blockPos.getY() + ", " + blockPos.getZ()));
+            player.sendSystemMessage(Component.literal("Location Saved"));
         }
-//        if(!pContext.getLevel().isClientSide() &&  clicked == true && player.isSprinting() == true){
-//            player.teleportTo(blockPos.getX(), blockPos.getY() + 1, blockPos.getZ());
-//            player.sendSystemMessage(Component.literal("Teleporting"));
-//            player.sendSystemMessage(Component.literal(player.getX() + ", " + player.getY() + ", " + player.getZ()));
-//        }
-
         pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(),
-                player -> player.broadcastBreakEvent(player.getUsedItemHand()));
+                    player -> player.broadcastBreakEvent(player.getUsedItemHand()));
 
         return InteractionResult.SUCCESS;
 
@@ -50,7 +47,6 @@ public class Teleportation extends Item {
         if(!level.isClientSide() &&  clicked == true){
             player.teleportTo(blockPos.getX(), blockPos.getY() + 1, blockPos.getZ());
             player.sendSystemMessage(Component.literal("Teleporting"));
-            player.sendSystemMessage(Component.literal(player.getX() + ", " + player.getY() + ", " + player.getZ()));
             player.getCooldowns().addCooldown(this, 20);
         }
 

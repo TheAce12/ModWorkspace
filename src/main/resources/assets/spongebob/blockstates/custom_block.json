@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model":  "spongebob:block/custom_block"
+    }
+  }
+}

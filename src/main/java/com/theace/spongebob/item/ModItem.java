@@ -5,21 +5,15 @@ import com.theace.spongebob.entity.ModEntity;
 import com.theace.spongebob.item.custom.Bomboclat;
 import com.theace.spongebob.item.custom.Teleportation;
 import com.theace.spongebob.item.custom.Yup;
-import net.minecraft.advancements.critereon.LightningStrikeTrigger;
-import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.player.Abilities;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import org.checkerframework.checker.units.qual.A;
 
 public class ModItem {
 
@@ -44,6 +38,7 @@ public class ModItem {
             ()-> new Item(new Item.Properties().food(Foods.CREWMATE)));
     public static final RegistryObject<Item> REDBULL = ITEMS.register("redbull",
             ()-> new Item(new Item.Properties().food(Foods.REDBULL)));
+
 
     public static class Foods{
         public  static  final FoodProperties CREWMATE = new FoodProperties.Builder()

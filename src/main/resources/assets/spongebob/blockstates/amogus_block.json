@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": {"model":  "spongebob:block/amogus_block"}
+    "": {
+      "model":  "spongebob:block/amogus_block"
+    }
   }
 }
