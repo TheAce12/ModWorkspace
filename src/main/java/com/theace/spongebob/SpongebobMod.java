@@ -2,11 +2,13 @@ package com.theace.spongebob;
 
 import com.mojang.logging.LogUtils;
 import com.theace.spongebob.block.ModBlocks;
+import com.theace.spongebob.enchantment.ModEnchantments;
 import com.theace.spongebob.entity.ModEntity;
 import com.theace.spongebob.entity.client.SpongeRenderer;
 import com.theace.spongebob.item.ModCreativeModeTabs;
 import com.theace.spongebob.item.ModItem;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -32,6 +34,7 @@ public class SpongebobMod
         ModItem.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModEntity.register(modEventBus);
+        ModEnchantments.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -75,6 +78,8 @@ public class SpongebobMod
             event.accept(ModBlocks.CUSTOM_BLOCK);
         }if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB.get()) {
             event.accept(ModItem.TELEPORTATION);
+        }if(event.getTab() == ModCreativeModeTabs.AMOGUS_TAB.get()) {
+            event.accept(ModItem.PORTAL_GUN_ITEM);
         }
     }
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -82,6 +87,7 @@ public class SpongebobMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntity.SPONGEBOB.get(), SpongeRenderer::new);
+            EntityRenderers.register(ModEntity.PORTAL_GUN_ENTITY.get(), ThrownItemRenderer::new);
         }
     }
 }

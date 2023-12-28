@@ -1,4 +1,4 @@
-package com.theace.spongebob.item.custom;
+package com.theace.spongebob.block.custom;
 
 import com.theace.spongebob.item.ModItem;
 import net.minecraft.core.BlockPos;
@@ -36,9 +36,8 @@ public class CustomBlock extends Block {
     public void stepOn(Level level, BlockPos blockPos, BlockState blockState, Entity entity) {
 
         if(entity instanceof LivingEntity livingEntity){
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,10));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,30));
         }
-
         super.stepOn(level, blockPos, blockState, entity);
     }
 
@@ -46,7 +45,7 @@ public class CustomBlock extends Block {
     public boolean addRunningEffects(BlockState state, Level level, BlockPos pos, Entity entity) {
 
         if(entity instanceof LivingEntity livingEntity){
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 10, 5));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 30, 5));
         }
         return super.addRunningEffects(state, level, pos, entity);
     }

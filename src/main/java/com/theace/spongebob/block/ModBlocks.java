@@ -1,12 +1,16 @@
 package com.theace.spongebob.block;
 
 import com.theace.spongebob.SpongebobMod;
+import com.theace.spongebob.block.custom.PortalGunBlock;
 import com.theace.spongebob.item.ModItem;
-import com.theace.spongebob.item.custom.CustomBlock;
+import com.theace.spongebob.block.custom.CustomBlock;
+import net.minecraft.client.resources.sounds.Sound;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -23,6 +27,9 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(3f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> CUSTOM_BLOCK = registerBlock("custom_block",
             () -> new CustomBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(3f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> PORTAL_GUN_BLOCK = registerBlock("portal_gun_block",
+            () -> new PortalGunBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.BASALT)));
 
     private  static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name ,block);

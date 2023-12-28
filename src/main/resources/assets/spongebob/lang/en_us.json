@@ -9,5 +9,9 @@
   "item.spongebob.dying": "dying",
   "item.spongebob.invincible": "invincible",
   "block.spongebob.custom_block": "Custom Block",
-  "item.spongebob.tp_wand": "Teleportation Wand"
+  "item.spongebob.tp_wand": "Teleportation Wand",
+  "item.spongebob.portal_gun_item": "Portal Gun",
+  "item.spongebob.portal_gun_projectile": "Portal Gun Projectile",
+  "enchantment.spongebob.lightning_striker": "Lightning Striker",
+  "enchantment.spongebob.explosion_striker": "Explosion Striker"
 }

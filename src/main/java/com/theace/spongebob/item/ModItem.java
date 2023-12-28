@@ -3,6 +3,7 @@ package com.theace.spongebob.item;
 import com.theace.spongebob.SpongebobMod;
 import com.theace.spongebob.entity.ModEntity;
 import com.theace.spongebob.item.custom.Bomboclat;
+import com.theace.spongebob.item.custom.PortalGunItem;
 import com.theace.spongebob.item.custom.Teleportation;
 import com.theace.spongebob.item.custom.Yup;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -27,6 +28,12 @@ public class ModItem {
             () -> new Yup(new Item.Properties()));
     public static  final RegistryObject<Item> INVINCIBLE = ITEMS.register("invincible",
             () -> new Bomboclat(new Item.Properties()));
+
+    public static  final RegistryObject<Item> PORTAL_GUN_ITEM = ITEMS.register("portal_gun_item",
+            () -> new PortalGunItem(new Item.Properties()));
+
+    public static  final RegistryObject<Item> PORTAL_GUN_PROJECTILE = ITEMS.register("portal_gun_projectile",
+            () -> new Item(new Item.Properties()));
 
     public static  final RegistryObject<Item> TELEPORTATION = ITEMS.register("tp_wand",
             () -> new Teleportation(new Item.Properties().durability(50)));
